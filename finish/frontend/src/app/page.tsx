@@ -19,7 +19,7 @@ export default function Home() {
   const [burnAmount, setburnAmount] = useState('');
   const [sendAccount, setsendAccount] = useState('');
   const [sendAmount, setsendAmount] = useState('');
-  const contractAddress = "0x420d54bD52AaeCa1b33575ECDdE502b0f8E400e2";
+  const contractAddress = "0xBAFf4B12a4cbAA00615Fd43195A5CB3A145c19De";
   let signer;
 
 
