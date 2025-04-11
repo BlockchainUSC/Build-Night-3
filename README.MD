@@ -493,6 +493,29 @@ const sendTokens = async (e) => {
 
 
 
+### Troubleshooting
+If you get a type error when trying to compile your frontend code, add this line to the top of your page.tsx file (underneath the imports):
+```
+"use client";
+
+declare global {
+  interface Window {
+    ethereum?: {
+      isMetaMask?: boolean;
+      request?: (...args: unknown[]) => Promise<unknown>;
+    };
+  }
+}
+```
+
+If you get an error that .build doesn't exist when trying to start your app, run 
+
+```
+npm next build
+```
+
+
+
 ### Congrats on your new Token!! 🥳
 
 Practice minting your tokens and sharing them with your friends :) 
