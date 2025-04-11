@@ -387,7 +387,7 @@ Lastly, add a useEffect function that will force token data to be fetched again 
 Copy the following mint tokens function into your export default home function: 
 
 ```solidity
-const mintTokens = async (e) => {
+const mintTokens = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (contract== undefined) {
       alert("Please connect to MetaMask");
@@ -423,7 +423,7 @@ const mintTokens = async (e) => {
 Copy the following burn tokens function into your export default home function: 
 
 ```solidity
-const burnTokens = async (e) => {
+const burnTokens = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (contract== undefined) {
       alert("Please connect to MetaMask");
@@ -460,7 +460,7 @@ const burnTokens = async (e) => {
 Copy the following send tokens function into your export default home function: 
 
 ```solidity
-const sendTokens = async (e) => {
+const sendTokens = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (contract== undefined) {
       alert("Please connect to MetaMask");
@@ -512,6 +512,13 @@ If you get an error that .build doesn't exist when trying to start your app, run
 
 ```
 npm next build
+```
+
+Also, in the function definitin for burnTokens, sendTokens, and mintTokens,
+change the "e: " to the following line to declare its type:
+
+```
+e: React.MouseEvent<HTMLButtonElement>
 ```
 
 
